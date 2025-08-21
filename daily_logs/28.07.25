@@ -1,0 +1,77 @@
+# 📅 Salesforce Daily Notes — 2025-07-28
+
+## 🧠 Topics Covered
+
+1. **CRM & Salesforce Overview**
+2. **Standard vs Custom Objects**
+3. **Users, Profiles, Roles, Permission Sets**
+4. **Automation Tools**: Flow Builder, Workflow Rules, Apex Triggers
+5. **Configuration vs Customization**
+6. **Reports & Dashboards**
+
+---
+
+## 🌐 CRM & Salesforce
+
+- CRM helps manage customer relationships and interactions.
+- Salesforce is a cloud-based CRM platform offering tools for sales, service, marketing, and app development.
+
+---
+
+## 📦 Objects in Salesforce
+
+### 🔹 Standard Objects
+- Predefined by Salesforce: `Account`, `Contact`, `Lead`, `Opportunity`
+
+### 🔸 Custom Objects
+- Created by users for specific needs
+- Naming convention: Use **CamelCase** (e.g., `TaskItem__c`, `StudentProfile__c`)
+
+---
+
+## 👤 Users, Profiles, Roles
+
+- **User**: Individual with login access
+- **Profile**: Defines what a user *can do* (object/field access)
+- **Role**: Defines what a user *can see* (record visibility)
+- **Permission Sets**: Extend access beyond profile limits
+
+---
+
+## ⚙️ Automation Tools
+
+| Tool             | Type      | Use Case                          |
+|------------------|-----------|-----------------------------------|
+| Flow Builder     | No-code   | Modern automation (recommended)   |
+| Workflow Rules   | No-code   | Legacy automation (simple tasks)  |
+| Apex Triggers    | Pro-code  | Advanced logic and integrations   |
+
+### 🔄 Flow Builder Types
+- **Record-Triggered Flow**: Runs when a record is created/updated
+- **Scheduled Flow**: Runs at specified time intervals
+- **Screen Flow**: Interactive UI for users
+
+---
+
+## 🛠️ Configuration vs Customization
+
+| Aspect            | Configuration 🧩         | Customization 🔧         |
+|-------------------|--------------------------|--------------------------|
+| Skill Level       | Admin-friendly (no code) | Developer-level (code)   |
+| Tools Used        | UI, fields, layouts       | Apex, LWC, APIs          |
+| Examples          | Validation rules, reports | Triggers, custom UI      |
+
+---
+
+## 📊 Reports & Dashboards
+
+### 📋 Reports
+- Tabular data with filters, summaries, and charts
+
+### 📈 Dashboards
+- Visual display of multiple reports
+- Includes charts, metrics, tables
+
+---
+
+📌 *Logged by Apurva — documenting my Salesforce learning journey.*
