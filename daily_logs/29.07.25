@@ -1,0 +1,117 @@
+
+# 🚀 Salesforce Study Notes
+
+A comprehensive guide to key Salesforce concepts, perfect for revision and sharing on GitHub.
+
+---
+
+## 🧩 Objects in Salesforce
+
+### 🔹 What Are Objects?
+- Containers for data, similar to database tables.
+- Each object holds records (rows) and fields (columns).
+
+### 🔹 Types of Objects
+| Type             | Description                                      |
+|------------------|--------------------------------------------------|
+| **Standard**     | Predefined by Salesforce (e.g., Account, Contact) |
+| **Custom**       | Created by users for specific business needs      |
+
+> Custom object names end with `__c`.
+
+---
+
+## 📦 Object Manager
+
+- Found in **Setup** → **Object Manager**.
+- Stores all objects: standard, custom, external, platform events, and big objects.
+- Allows creation and customization of objects, fields, relationships, page layouts, etc.
+
+---
+
+## 🛠️ Creating a Custom Object
+
+### Steps:
+1. Go to **Setup** → **Object Manager**.
+2. Click **Create** → **Custom Object**.
+3. Fill in object details (Label, API Name, etc.).
+4. Choose options (Allow Reports, Activities, etc.).
+5. Click **Save**.
+
+---
+
+## 🗂️ Tabs in Salesforce
+
+- Tabs are frontend UI elements that display object records.
+- Required for users to access objects via the app.
+
+### Creating a Tab:
+1. Go to **Setup** → **Tabs**.
+2. Click **New** under **Custom Object Tabs**.
+3. Select the object and choose a tab style.
+4. Save and assign to apps/profiles.
+
+---
+
+## 📱 Displaying Object in Sales App
+
+### Steps:
+1. Create a tab for the object.
+2. Go to **Setup** → **App Manager**.
+3. Edit the **Sales** app.
+4. Add the object tab to **Navigation Items**.
+5. Save and assign to user profiles.
+
+---
+
+## 👤 Profiles in Salesforce
+
+- Define basic permissions for users.
+- Every user has exactly one profile.
+
+### Controls:
+| Area               | Description                                      |
+|--------------------|--------------------------------------------------|
+| Object Access      | View, create, edit, delete records               |
+| Field-Level Access | Show/hide specific fields                        |
+| Tab/App Access     | Control visibility in UI                         |
+| Record Types       | Specify available types                          |
+| Page Layouts       | Assign layouts                                   |
+| Login Restrictions | Set login hours and IP ranges                    |
+
+---
+
+## 🧾 Fields in Salesforce
+
+- Define data structure within objects.
+- Can be standard or custom.
+
+### Common Field Types:
+| Type                   | Description                                  |
+|------------------------|----------------------------------------------|
+| Text, Number, Currency | Basic data types                             |
+| Date/Time              | Stores date and time                         |
+| Checkbox               | Boolean value                                |
+| Picklist               | Dropdown options                             |
+| Lookup/Master-Detail   | Relationships between objects                |
+| Formula                | Calculated values                            |
+| Roll-Up Summary        | Aggregated child record data                 |
+
+### Creating a Field:
+1. Go to **Object Manager** → Select Object.
+2. Click **Fields & Relationships** → **New**.
+3. Choose field type and fill in details.
+4. Set field-level security and layout visibility.
+5. Save.
+
+---
+
+## 🧠 Best Practices Summary
+
+- Use standard objects when possible.
+- Create custom objects only when necessary.
+- Always create tabs for objects that users need to access.
+- Assign least privilege via profiles.
+- Use permission sets for additional access.
+- Add help text and validation rules to fields.
+- Test changes in sandbox before deploying.
