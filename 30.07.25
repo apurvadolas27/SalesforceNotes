@@ -1,0 +1,94 @@
+
+# 📚 Salesforce Admin Notes
+
+---
+
+## 🔗 Relationships in Salesforce
+
+| Relationship Type     | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| **Lookup**             | Loose association between objects. Child record can exist independently.   |
+| **Master-Detail**      | Strong dependency. Child record is deleted if parent is deleted.           |
+| **Many-to-Many**       | Achieved using a **junction object** with two master-detail relationships. |
+| **Hierarchical**       | Only available on **User** object. Defines manager-subordinate structure.  |
+
+---
+
+## 🧠 Schema Builder
+
+- Visual tool to view and manage object relationships.
+- Found in **Setup** → **Schema Builder**.
+- Allows creation of:
+  - Custom objects
+  - Fields
+  - Relationships
+- Limitations:
+  - Fields created here must be manually added to page layouts.
+  - Cannot create record types or validation rules.
+
+---
+
+## 📄 Page Layouts
+
+- Control how records appear to users.
+- Can be customized per profile or record type.
+- Features:
+  - Organize fields into sections
+  - Add/remove buttons
+  - Show/hide related lists
+  - Make fields read-only or required
+- Found in **Object Manager** → [Object] → **Page Layouts**
+
+---
+
+## 🔐 Record Types
+
+- Allow different business processes for the same object.
+- Customize:
+  - Picklist values
+  - Page layouts
+- Useful for:
+  - Sales stages
+  - Support case types
+- Created via **Object Manager** → [Object] → **Record Types**
+
+---
+
+## 🧩 Compact Layouts
+
+- Control which fields appear in the **highlight panel** of a record.
+- Typically used in mobile and Lightning Experience.
+- Found in **Object Manager** → [Object] → **Compact Layouts**
+
+---
+
+## 🧪 Validation Rules
+
+- Ensure data integrity by enforcing conditions.
+- Example: Prevent closing a case without a resolution.
+- Created via **Object Manager** → [Object] → **Validation Rules**
+- Syntax: `IF(condition, error message)`
+- Error message shown when rule is violated.
+
+---
+
+## 🧮 Formula Fields
+
+- Auto-calculate values based on other fields.
+- Read-only and updated in real-time.
+- Examples:
+  - `Amount * Tax_Rate`
+  - `IF(Is_Closed, "Closed", "Open")`
+- Created via **Object Manager** → [Object] → **Fields & Relationships** → New → Formula
+
+---
+
+## 🧠 Roll-Up Summary Fields
+
+- Available only in **Master-Detail** relationships.
+- Summarize child record data on parent record.
+- Types:
+  - COUNT
+  - SUM
+  - MIN/MAX
+- Example: Total number of Opportunities under an Account.
