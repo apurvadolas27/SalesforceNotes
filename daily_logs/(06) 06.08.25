@@ -1,0 +1,153 @@
+# 📊 Salesforce Data Management – Lecture Notes (06-08-2025)
+
+## 1. Introduction to Data Management
+
+**Definition:**  
+Process of storing, organizing, securing, and maintaining data in Salesforce.
+
+**Purpose:**  
+Ensures data is accurate, consistent, accessible, and useful for business decisions.
+
+**Key Components:**
+- Data Modeling: Objects, Fields, Relationships (Standard, Custom, External, Big Objects)
+- Data Import & Export
+- Data Quality Management
+- Data Security
+- Data Maintenance
+- Data Integration
+- Data Backup & Recovery
+- Data Archival
+
+---
+
+## 2. Salesforce Data Operations
+
+| Operation       | Purpose                        | Requirement              | Tools / Methods                                                                 |
+|----------------|--------------------------------|--------------------------|----------------------------------------------------------------------------------|
+| Insert         | Add new records                | None                     | Data Import Wizard, Data Loader, Workbench, dataloader.io                        |
+| Update         | Modify existing records        | Record ID or External ID | Data Loader, Workbench, dataloader.io                                            |
+| Upsert         | Insert if new, update if exists| Record ID or External ID | Data Loader, Workbench, dataloader.io, Data Import Wizard                        |
+| Delete         | Move records to Recycle Bin    | Record ID or External ID | Workbench, Data Loader, dataloader.io, Mass Delete Wizard                        |
+| Hard Delete    | Permanently delete records     | Record ID, Bulk API      | Data Loader, Workbench API / Purge                                               |
+| Undelete       | Restore from Recycle Bin       | Record ID                | Workbench                                                                        |
+| Export         | Extract data                   | Optional filters (SOQL)  | Data Export Wizard, Data Loader, Workbench, dataloader.io                        |
+
+---
+
+## 3. Record ID
+
+**Definition:** Unique Salesforce-generated identifier for every record.
+
+**Formats:**
+- 15-character ID: Case-sensitive (UI). Example: `0035g00000ABCde`
+- 18-character ID: Case-insensitive (APIs). Example: `0035g00000ABCdeAAZ`
+
+**Usage:** Required for Update, Delete, Upsert, and Undelete operations.
+
+---
+
+## 4. Data Import
+
+**Purpose:** Add or update records from external sources (CSV, databases).
+
+**Tools:**
+- **Data Import Wizard:** Web-based, up to 50,000 records. Supports standard + custom objects.
+- **Data Loader:** Desktop client, supports millions of records. CLI automation.
+- **dataloader.io:** Cloud-based, scheduling, Dropbox/FTP integration.
+- **Workbench:** Web-based, API-level operations.
+
+**Best Practices:**
+- Clean data before import
+- Include required fields
+- Use External IDs for Upsert
+- Test with small batches
+
+---
+
+## 5. Upsert Operation
+
+**Definition:** Combination of Update + Insert.
+
+**Logic:**
+- If record exists → Update  
+- If record doesn’t exist → Insert
+
+**Required:** Record ID or External ID
+
+**Steps (Workbench):**
+1. Prepare CSV with External ID or Record ID
+2. Login → Data → Upsert
+3. Select Object
+4. Choose External ID / Id field
+5. Upload CSV, map fields
+6. Confirm → Run
+
+---
+
+## 6. Delete / Hard Delete / Undelete
+
+| Operation     | Definition                          | Notes                                 |
+|--------------|--------------------------------------|---------------------------------------|
+| Delete       | Moves record to Recycle Bin          | Can restore within 15 days            |
+| Hard Delete  | Permanently removes record           | Cannot be recovered                   |
+| Undelete     | Restores record from Recycle Bin     | Only works for deleted (not purged)   |
+
+---
+
+## 7. Exporting Data
+
+**Purpose:** Backup, migration, reporting, integration.
+
+**Tools & Methods:**
+- **Data Export Wizard:** Schedule weekly/monthly, includes attachments
+- **Data Loader:** SOQL filtering, bulk export, Export All
+- **Workbench:** SOQL queries, export CSV
+- **dataloader.io:** Scheduling and filtering
+
+**Types of Export:**
+- **Full Export:** Entire object data
+- **Partial Export:** Filtered records via SOQL
+
+---
+
+## 8. Sandbox vs Production
+
+| Feature       | Sandbox                          | Production                      |
+|---------------|----------------------------------|----------------------------------|
+| Purpose       | Development, testing, training   | Live business operations         |
+| Data          | Copy of Production               | Real, live data                  |
+| Impact        | No effect on live system         | Directly affects users & business|
+| User Access   | Admins, developers, testers      | End users + admins               |
+| Types         | Developer, Dev Pro, Partial, Full| Single Production org            |
+| Refresh       | Can refresh from Production      | Cannot refresh                   |
+
+**Use:** Sandbox = safe environment to test changes before deploying to Production.
+
+---
+
+## 9. Salesforce Data Tools
+
+| Tool             | Type        | Operations Supported                          | Key Notes                                  |
+|------------------|-------------|-----------------------------------------------|--------------------------------------------|
+| Data Import Wizard| Inbuilt     | Insert, Update, Upsert                        | Up to 50,000 records                        |
+| Data Export Wizard| Inbuilt     | Export                                        | Schedule weekly/monthly                    |
+| Data Loader       | Desktop     | Insert, Update, Upsert, Delete, Hard Delete, Export | Bulk data, CLI automation         |
+| dataloader.io     | Cloud-based | Insert, Update, Upsert, Delete, Export        | Scheduling & cloud storage integration     |
+| Workbench         | Web-based   | Insert, Update, Upsert, Delete, Undelete, Export | API-level, manual, flexible           |
+
+---
+
+## 10. Best Practices for Salesforce Data Management
+
+✅ Always backup data before update or delete  
+✅ Test imports/updates in Sandbox first  
+✅ Use External ID for Upsert to prevent duplicates  
+✅ Clean data (remove duplicates, validate formatting)  
+✅ Monitor success/error CSVs after each operation  
+✅ Limit batch sizes for large datasets  
+✅ Use scheduled exports for regular backups
+
+---
+
+> _“Good data management in Salesforce isn’t just about tools—it’s about trust, accuracy, and agility.”_
+
