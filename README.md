@@ -1,26 +1,33 @@
 # 📚 Salesforce Daily Notes
 
 Maintained by **Apurva**  
-A structured, evolving collection of Salesforce concepts and daily learnings.
+A structured, evolving collection of Salesforce concepts, hands-on learnings, and personal insights.
 
 ---
 
-## 🗂️ Sections
+## 🧠 Purpose
 
-- `crm-overview/` → CRM fundamentals and Salesforce intro
-- `objects/` → Standard vs Custom Objects
-- `security/` → Users, Profiles, Roles, Permission Sets
-- `automation/` → Flow Builder, Workflow Rules, Apex Triggers
-- `customization/` → Configuration vs Customization
-- `analytics/` → Reports and Dashboards
-- `daily-log/` → Daily notes and summaries
+To build a comprehensive, well-documented Salesforce knowledge base—starting from foundational concepts and progressing toward advanced platform configuration, automation, and development.
 
 ---
 
-## 🧠 Goal
+## 🚀 What's Inside
 
-To build a complete, well-documented Salesforce knowledge base—starting from basics and progressing to advanced topics.
+This repository will serve as a personal learning journal, reference hub, and showcase of my Salesforce journey.  
+It will include:
+
+- ✅ Daily notes and concept breakdowns  
+- 🛠️ Hands-on troubleshooting logs  
+- 📌 Key takeaways from courses, projects, and experiments  
 
 ---
 
-📌 Updated daily with new learnings.
+## 🔄 Status
+
+Content is updated regularly as I learn and explore new areas of the Salesforce ecosystem.  
+File structure and organization will evolve over time—stay tuned!
+
+---
+
+Feel free to suggest changes or improvements if you’re collaborating or just passing by.  
+Thanks for visiting!
